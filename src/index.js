@@ -1,4 +1,6 @@
 import './style.css';
+import './calculator.js'
+import { addButton, wrapper } from './calculator.js';
 
 function component() {
     const element = document.createElement('div');
@@ -6,10 +8,10 @@ function component() {
     element.innerText = ("hello world")
     return element;
 }
-let gg = document.createElement('div');
-gg.classList.add('me');
-gg.innerText = "hrllo";
+
 
  
 
 document.body.appendChild(component());
+document.body.appendChild(wrapper())
+document.body.appendChild(addButton())
