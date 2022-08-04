@@ -1,6 +1,7 @@
 let wrapper = () => {
     let hold = document.createElement('div');
     hold.classList.add("calcutor");
+    hold.id = "calc"
     hold.innerHTML = `
     <div><input type="number" name="sqft" id="sq1" placeholder="sq ft"> <input type="number" name="price" id="price1" placeholder="price"> </div>
     <div><input type="number" name="sqft" id="sq2" placeholder="sq ft"> <input type="number" name="price" id="price2" placeholder="price"> </div>
@@ -20,11 +21,10 @@ let addButton = () => {
 }
 
 let addInput = () => {
-    let h = document.createElement('h1');
-    h.classList.add('h');
-    h.innerHTML = 'yooooo';
-    document.getElementsByClassName("calcutor").appendChild(h)
-    document.getElementsByClassName("calcutor").appendChild ` <div><input type="number" name="sqft" id="sq3" placeholder="sq ft"> <input type="number" name="price" id="price3" placeholder="price"> </div> `;
+    let div = document.createElement('div');
+    div.classList.add('h');
+    div.innerHTML = `<input type="number" name="sqft" id="sq3" placeholder="sq ft"> <input type="number" name="price" id="price3" placeholder="price">` ;
+    document.getElementById('calc').appendChild(div)
 }
 
 
