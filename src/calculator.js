@@ -3,9 +3,9 @@ let wrapper = (addbtn, calcbtn) => {
     hold.classList.add("calcutor");
     hold.innerHTML = `
     <div id = "calc">
-        <div><input type="number" name="sqft" id="sqft" placeholder="sq ft"> <input type="number" name="price" id="price" placeholder="price"> </div>
-        <div><input type="number" name="sqft" id="sqft" placeholder="sq ft"> <input type="number" name="price" id="price" placeholder="price"> </div>
-        <div><input type="number" name="sqft" id="sqft" placeholder="sq ft"> <input type="number" name="price" id="price" placeholder="price"> </div>
+        <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
     </div> 
     ` 
     hold.appendChild(addbtn)
@@ -26,7 +26,7 @@ let addButton = () => {
 let addInput = () => {
     let div = document.createElement('div');
     div.classList.add('h');
-    div.innerHTML = `<input type="number" name="sqft" id="sqft" placeholder="sq ft"> <input type="number" name="price" id="price" placeholder="price">` ;
+    div.innerHTML = `<input type="number" name="sqft" id="psqft" placeholder="Price per Sqft."> ` ;
     document.getElementById('calc').appendChild(div)
 }
 
@@ -41,17 +41,20 @@ let calculateBtn = () => {
 }
 
 let getInput = () => {
-    let sqftValue = document.querySelectorAll('#sqft');
-    let priceValue= document.querySelectorAll('#price');
+    let sqftValue = document.querySelectorAll('#psqft');
+    
     let sqft = 0
-    let totalPrice = 0 
-    sqftValue.forEach(num => sqft += parseFloat(num.value))
-    priceValue.forEach(num => totalPrice += parseFloat(num.value))
-    displayComp(totalPrice, sqft)
+    let totalVals = 0 
+    sqftValue.forEach(num => {
+        sqft += parseFloat(num.value);
+        totalVals += 1 
+    })
+    
+    displayComp(totalVals, sqft)
 }
 
 let displayComp = (val1, val2) => {
-    let comp = val1/val2
+    let comp = val2/val1
     upddateComp(comp)
 }
 
