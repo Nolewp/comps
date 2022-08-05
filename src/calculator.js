@@ -41,14 +41,19 @@ let addInput = () => {
 
 let getInput = () => {
     let sqftValue = document.querySelectorAll('#sqft');
-    let priceValue= document.querySelectorAll('#prce');
+    let priceValue= document.querySelectorAll('#price');
     let sqft = 0
     let totalPrice = 0 
     sqftValue.forEach(num => sqft += parseFloat(num.value))
     priceValue.forEach(num => totalPrice += parseFloat(num.value))
+    displayComp(sqft, totalPrice)
 }
 
-
+let displayComp = (val1, val2) => {
+    let comp = val1/val2
+    console.log(parseInt(comp))
+    return comp
+}
 
 let createCalculator = () => {
     let calc = wrapper(addButton(), calculateBtn())
