@@ -1,6 +1,6 @@
 import './style.css';
 import './calculator.js'
-import { addButton, wrapper } from './calculator.js';
+import {  createCalculator } from './calculator.js';
 
 function component() {
     const element = document.createElement('div');
@@ -12,6 +12,4 @@ function component() {
 
  
 
-document.body.appendChild(component());
-document.body.appendChild(wrapper())
-document.body.appendChild(addButton())
+document.body.appendChild(createCalculator());
