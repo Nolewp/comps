@@ -1,4 +1,5 @@
 import './style.css';
+import closebutton from './closebutton.svg';
 import './calculator.js'
 import {  createCalculator } from './calculator.js';
 
