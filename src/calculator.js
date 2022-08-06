@@ -35,14 +35,23 @@ let calculateBtn = () => {
     calculateButton.classList.add("addHomeBtn");
     calculateButton.innerText = "Calculate Comp Value";
     calculateButton.onclick = function(click) {
-        getInput();
+        validateInput();
     }
     return calculateButton
+}
+let validateInput = () => {
+    let sqftValue = document.querySelectorAll('#psqft');
+    sqftValue.forEach(num => {
+        if (num.value == '') {
+            alert('The entire form must be filled out')
+        }
+        getInput()
+        }
+    ) 
 }
 
 let getInput = () => {
     let sqftValue = document.querySelectorAll('#psqft');
-    
     let sqft = 0
     let totalVals = 0 
     sqftValue.forEach(num => {
