@@ -41,13 +41,24 @@ let calculateBtn = () => {
 }
 let validateInput = () => {
     let sqftValue = document.querySelectorAll('#psqft');
+    let check = 0
     sqftValue.forEach(num => {
-        if (num.value == '') {
-            alert('The entire form must be filled out')
-        }
+    if (num.value == '') {
+        check += 1
+        num.style.backgroundColor = "red";
+        num.placeholder="please fill out"
+    }
+    })
+    if (check === 0) {
+        sqftValue.forEach(num => {
+                num.style.backgroundColor = "white";
+            })
         getInput()
-        }
-    ) 
+
+    }
+    else {
+        alert('you must fill in every input')
+    }
 }
 
 let getInput = () => {
