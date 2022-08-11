@@ -3,15 +3,24 @@ let wrapper = (addbtn, calcbtn) => {
     hold.classList.add("calcutor");
     hold.innerHTML = `
     <div id = "calc">
-        <div><span class="options"><i onClick="deletePost(this)" class="trash-alt"></i></span><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
-        <div><button onClick="deletePost(this)" class="trash-alt"></button><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
-        <div><i onClick="deletePost(this)" class="trash-alt"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div></span><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
     </div> 
     ` 
     hold.appendChild(addbtn)
     hold.appendChild(calcbtn)
     return hold
 }
+
+let makeDeletePostBtn = () => {
+    let delBtn = document.createElement('i');
+    delBtn.classList.add('delBtn');
+    delBtn.onclick = function(click) {
+        deletePost();
+    }
+}
+
 let deletePost = (e) => {
     e.parentElement.parentElement.remove();
 };
@@ -61,9 +70,6 @@ let validateInput = () => {
         getInput()
 
     }
-    else {
-        alert('you must fill in every input')
-    }
 }
 
 let getInput = () => {
@@ -86,11 +92,12 @@ let displayComp = (val1, val2) => {
 let displayCompArea = () => {
     let compArea = document.createElement("div");
     compArea.classList.add("compArea");
+    compArea.innerText = ''
     let value = document.createElement("h3");
     value.classList.add("compValue");
+    value.innerText = '';
     compArea.appendChild(value);
-
-    
+    return compArea
 }
 
 let upddateComp = (newcomp) => {
@@ -102,6 +109,7 @@ let upddateComp = (newcomp) => {
 
 let createCalculator = () => {
     let calc = wrapper(addButton(), calculateBtn())
+    calc.appendChild(displayComp())
     return calc
 }
 
