@@ -92,13 +92,16 @@ let getInput = () => {
         sqft += parseFloat(num.value);
         totalVals += 1 
     })
+    let subject = document.querySelector("#subject").value;
     
-    displayComp(totalVals, sqft)
+    displayComp(totalVals, sqft, subject);
 }
 
-let displayComp = (val1, val2) => {
-    let comp = val2/val1;
-    updateComp(comp)
+let displayComp = (val1, val2, subject) => {
+    let avg= val2/val1;
+    let comp = subject * avg
+    comp = comp.toFixed(0);
+    updateComp(comp);
 }
 
 let displayCompArea = () => {
