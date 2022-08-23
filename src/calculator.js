@@ -34,7 +34,7 @@ let wrapper = (addbtn, calcbtn) => {
 let addButton = () => {
     let addcalcbutton = document.createElement('button');
     addcalcbutton.classList.add("addHomeBtn");
-    addcalcbutton.innerText = "add a home";
+    addcalcbutton.innerText = "Add a home";
     addcalcbutton.onclick = function(click) {
         addInput();
     }
@@ -44,7 +44,7 @@ let addButton = () => {
 let calculateBtn = () => {
     let calculateButton = document.createElement('button');
     calculateButton.classList.add("clacCompValue");
-    calculateButton.innerText = "Calculate Comp Value";
+    calculateButton.innerText = "Calculate comp value";
     calculateButton.onclick = function(click) {
         validateInput();
     }
@@ -103,7 +103,7 @@ let displayComp = (val1, val2, subject) => {
     let avg= val2/val1;
     let comp = subject * avg
     comp = comp.toFixed(0);
-    updateComp(comp);
+    updateComp(comp, avg);
 }
 
 let displayCompArea = () => {
@@ -117,9 +117,9 @@ let displayCompArea = () => {
     return compArea
 }
 
-let updateComp = (newcomp) => {
+let updateComp = (newcomp, avg) => {
     let val = document.getElementById("comValue");
-    val.innerText = "The estimated subject home value is $ " + newcomp;
+    val.innerText = "The estimated subject home value is $" + newcomp + ", the avg price per sqft. is " + avg.toFixed(2);
 }
 
 let createCalculator = () => {
