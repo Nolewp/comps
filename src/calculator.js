@@ -112,14 +112,14 @@ let displayCompArea = () => {
     let value = document.createElement("h3");
     value.classList.add("compValue");
     value.id = "comValue";
-    value.innerText = '55';
+    value.innerText = 'Fillout the form to calculate current estimated home value!';
     compArea.appendChild(value);
     return compArea
 }
 
 let updateComp = (newcomp) => {
     let val = document.getElementById("comValue");
-    val.innerText = String(newcomp)
+    val.innerText = "The estimated subject home value is $ " + newcomp;
 }
 
 let createCalculator = () => {
