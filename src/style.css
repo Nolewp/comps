@@ -12,3 +12,16 @@ body {
     margin: 3px;
     
 }
+
+#calc {
+   
+    text-align: center;
+}
+
+.compArea {
+    text-align: center;
+}
+
+.btnList {
+    text-align: center;
+}
