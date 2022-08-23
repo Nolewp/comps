@@ -50,7 +50,6 @@ let calculateBtn = () => {
     calculateButton.classList.add("clacCompValue");
     calculateButton.innerText = "Calculate Comp Value";
     calculateButton.onclick = function(click) {
-        validateInputSubject();
         validateInput();
     }
     return calculateButton
@@ -60,6 +59,15 @@ let calculateBtn = () => {
 let validateInput = () => {
     let sqftValue = document.querySelectorAll('#psqft');
     let check = 0
+    let sub = document.querySelector('#subject');
+    if (sub.value == '') {
+        sub.style.backgroundColor = "red";
+       sub.placeholder="please fill out Subject";
+       check += 1
+    }
+    else {
+        sub.style.backgroundColor = "white";
+    }
     sqftValue.forEach(num => {
     if (num.value == '') {
         check += 1
