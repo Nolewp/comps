@@ -1,6 +1,8 @@
 let wrapper = (addbtn, calcbtn) => {
     let hold = document.createElement('div');
-    hold.classList.add("calcutor");
+    hold.classList.add("calculator");
+    let btnHold = document.createElement('div')
+    btnHold.classList.add("btnList")
     hold.innerHTML = `
     <div id = "calc">
         <div></span><input type="number" name="subject" id="subject" placeholder="Subject Home Sqft.">  </div>
@@ -11,8 +13,9 @@ let wrapper = (addbtn, calcbtn) => {
 
     </div> 
     ` 
-    hold.appendChild(addbtn)
-    hold.appendChild(calcbtn)
+    btnHold.appendChild(addbtn)
+    btnHold.appendChild(calcbtn)
+    hold.appendChild(btnHold)
     return hold
 }
 
@@ -38,13 +41,6 @@ let addButton = () => {
     return addcalcbutton
 }
 
-let addInput = () => {
-    let div = document.createElement('div');
-    div.classList.add('h');
-    div.innerHTML = `<input type="number" name="sqft" id="psqft" placeholder="Price per Sqft."> ` ;
-    document.getElementById('calc').appendChild(div)
-}
-
 let calculateBtn = () => {
     let calculateButton = document.createElement('button');
     calculateButton.classList.add("clacCompValue");
@@ -55,6 +51,12 @@ let calculateBtn = () => {
     return calculateButton
 }
 
+let addInput = () => {
+    let div = document.createElement('div');
+    div.classList.add('h');
+    div.innerHTML = `<input type="number" name="sqft" id="psqft" placeholder="Price per Sqft."> ` ;
+    document.getElementById('calc').appendChild(div)
+}
 
 let validateInput = () => {
     let sqftValue = document.querySelectorAll('#psqft');
