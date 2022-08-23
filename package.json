@@ -10,7 +10,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "repository": "git + https://github.com/nolewp/comps.git",
+  "repository": {
+    "url": "git + https://github.com/nolewp/comps.git"
+  },
   "homepage": "https://nolewp.github.io/comps",
   "keywords": [],
   "author": "",
