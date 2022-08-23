@@ -3,9 +3,12 @@ let wrapper = (addbtn, calcbtn) => {
     hold.classList.add("calcutor");
     hold.innerHTML = `
     <div id = "calc">
-        <div></span><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div></span><input type="number" name="subject" id="subject" placeholder="Subject Home Sqft.">  </div>
+        <br> <br>
         <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
         <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+
     </div> 
     ` 
     hold.appendChild(addbtn)
@@ -13,19 +16,17 @@ let wrapper = (addbtn, calcbtn) => {
     return hold
 }
 
-let makeDeletePostBtn = () => {
-    let delBtn = document.createElement('i');
-    delBtn.classList.add('delBtn');
-    delBtn.onclick = function(click) {
-        deletePost();
-    }
-}
+// let makeDeletePostBtn = () => {
+//     let delBtn = document.createElement('i');
+//     delBtn.classList.add('delBtn');
+//     delBtn.onclick = function(click) {
+//         deletePost();
+//     }
+// }
 
-let deletePost = (e) => {
-    e.parentElement.parentElement.remove();
-};
-
-
+// let deletePost = (e) => {
+//     e.parentElement.parentElement.remove();
+// };
 
 let addButton = () => {
     let addcalcbutton = document.createElement('button');
@@ -46,13 +47,16 @@ let addInput = () => {
 
 let calculateBtn = () => {
     let calculateButton = document.createElement('button');
-    calculateButton.classList.add("addHomeBtn");
+    calculateButton.classList.add("clacCompValue");
     calculateButton.innerText = "Calculate Comp Value";
     calculateButton.onclick = function(click) {
+        validateInputSubject();
         validateInput();
     }
     return calculateButton
 }
+
+
 let validateInput = () => {
     let sqftValue = document.querySelectorAll('#psqft');
     let check = 0
@@ -86,34 +90,32 @@ let getInput = () => {
 
 let displayComp = (val1, val2) => {
     let comp = val2/val1;
-    upddateComp(comp)
+    updateComp(comp)
 }
 
 let displayCompArea = () => {
     let compArea = document.createElement("div");
     compArea.classList.add("compArea");
-    compArea.innerText = ''
     let value = document.createElement("h3");
     value.classList.add("compValue");
-    value.innerText = '';
+    value.id = "comValue";
+    value.innerText = '55';
     compArea.appendChild(value);
     return compArea
 }
 
-let upddateComp = (newcomp) => {
-    let compValue = document.createElement('h4');
-    compValue.classList.add('compValue');
-    compValue.innerText = newcomp;
-    document.body.appendChild(compValue)
+let updateComp = (newcomp) => {
+    let val = document.getElementById("comValue");
+    val.innerText = String(newcomp)
 }
 
 let createCalculator = () => {
-    let calc = wrapper(addButton(), calculateBtn())
-    calc.appendChild(displayComp())
+    let calc = wrapper(addButton(), calculateBtn());
+    calc.appendChild(displayCompArea());
     return calc
 }
 
 export{
-    deletePost,
+    
     createCalculator
 }
