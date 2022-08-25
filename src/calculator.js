@@ -119,7 +119,8 @@ let displayCompArea = () => {
 
 let updateComp = (newcomp, avg) => {
     let val = document.getElementById("comValue");
-    val.innerText = "The estimated subject home value is $" + newcomp + ", the avg price per sqft. is " + avg.toFixed(2);
+    let comp = newcomp.toLocaleString('en-US');
+    val.innerText = "The estimated subject home value is $" + comp + ", the avg price per sqft. is " + avg.toFixed(2);
 }
 
 let createCalculator = () => {
