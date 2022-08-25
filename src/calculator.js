@@ -20,7 +20,7 @@ let wrapper = (addbtn, calcbtn) => {
 }
 
 let editPost = (e) => {
-    e.parentElement.parentElement.remove();
+    e.parentElement.remove();
 };
 
 let makeDeletePostBtn = () => {
