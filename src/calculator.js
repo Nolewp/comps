@@ -5,8 +5,10 @@ let wrapper = (addbtn, calcbtn) => {
     btnHold.classList.add("btnList")
     hold.innerHTML = `
     <div id = "calc">
+        <h3> Subject home </h3>
         <div></span><input type="number" name="subject" id="subject" placeholder="Subject Home Sqft.">  </div>
-        <br> <br>
+        
+        <h3>Comparison homes</h3>
         <div> <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
         <div> <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
         <div> <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
