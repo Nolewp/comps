@@ -7,9 +7,9 @@ let wrapper = (addbtn, calcbtn) => {
     <div id = "calc">
         <div></span><input type="number" name="subject" id="subject" placeholder="Subject Home Sqft.">  </div>
         <br> <br>
-        <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
-        <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
-        <div><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div> <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div> <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+        <div> <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
 
     </div> 
     ` 
@@ -19,17 +19,21 @@ let wrapper = (addbtn, calcbtn) => {
     return hold
 }
 
-// let makeDeletePostBtn = () => {
-//     let delBtn = document.createElement('i');
-//     delBtn.classList.add('delBtn');
-//     delBtn.onclick = function(click) {
-//         deletePost();
-//     }
-// }
+let editPost = (e) => {
+    e.parentElement.parentElement.remove();
+};
 
-// let deletePost = (e) => {
-//     e.parentElement.parentElement.remove();
-// };
+let makeDeletePostBtn = () => {
+    let delBtn = document.createElement('i');
+    delBtn.classList.add('delBtn');
+    delBtn.onclick = function(click) {
+        deletePost();
+    }
+}
+
+let deletePost = (e) => {
+    e.parentElement.parentElement.remove();
+};
 
 let addButton = () => {
     let addcalcbutton = document.createElement('button');
@@ -54,7 +58,7 @@ let calculateBtn = () => {
 let addInput = () => {
     let div = document.createElement('div');
     div.classList.add('h');
-    div.innerHTML = `<input type="number" name="sqft" id="psqft" placeholder="Price per Sqft."> ` ;
+    div.innerHTML = ` <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="sqft" id="psqft" placeholder="Price per Sqft."> ` ;
     document.getElementById('calc').appendChild(div)
 }
 
@@ -131,5 +135,6 @@ let createCalculator = () => {
 
 export{
     
-    createCalculator
+    createCalculator,
+    editPost
 }
