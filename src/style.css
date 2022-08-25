@@ -1,8 +1,14 @@
 body {
     background-color: aquamarine;
 }
-
-.trash-alt {
+#subject {
+    width: 250px;
+    max-width: 75vw;
+}
+#psqft {
+    max-width:  75vw;
+}
+.fas {
     background-image: url('./closebutton.svg');
     background-repeat: no-repeat;
     width: 5px;
@@ -10,7 +16,6 @@ body {
     padding: 6px;
     align-self: center;
     margin: 3px;
-    
 }
 
 #calc {
