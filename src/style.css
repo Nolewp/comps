@@ -21,8 +21,15 @@ body {
 #calc {
    
     text-align: center;
-}
 
+}
+.calculator{
+    background-color: aliceblue;
+    border-radius: 25px;
+    justify-content: center;
+    width: 70vw;
+    margin-left: 15vw;
+}
 .compArea {
     text-align: center;
 }
