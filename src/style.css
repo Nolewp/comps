@@ -4,9 +4,12 @@ body {
 #subject {
     width: 250px;
     max-width: 75vw;
+    border-radius: 5px;
 }
 #psqft {
     max-width:  75vw;
+    margin-top: .5vh;
+    border-radius: 5px;
 }
 .fas {
     background-image: url('./closebutton.svg');
@@ -19,7 +22,7 @@ body {
 }
 
 #calc {
-   
+    margin-top: 2vh;
     text-align: center;
 
 }
@@ -32,6 +35,16 @@ body {
 }
 .compArea {
     text-align: center;
+}
+.clacCompValue {
+    margin-top: 2vh;
+    background-color: rgb(5, 166, 241);
+    border-radius: 10px;
+}
+
+.addHomeBtn {
+    background-color: rgb(5, 166, 241);
+    border-radius: 10px;
 }
 
 .btnList {
