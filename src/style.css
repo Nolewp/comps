@@ -3,11 +3,11 @@ body {
 }
 #subject {
     width: 250px;
-    max-width: 75vw;
+    max-width: 70vw;
     border-radius: 5px;
 }
 #psqft {
-    max-width:  75vw;
+    max-width:  70vw;
     margin-top: .5vh;
     border-radius: 5px;
 }
@@ -37,12 +37,14 @@ body {
     text-align: center;
 }
 .clacCompValue {
+    color: white;
     margin-top: 2vh;
     background-color: rgb(5, 166, 241);
     border-radius: 10px;
 }
 
 .addHomeBtn {
+    color: white;
     background-color: rgb(5, 166, 241);
     border-radius: 10px;
 }
