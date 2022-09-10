@@ -29,6 +29,10 @@ body {
 .calculator{
     background-color: aliceblue;
     border-radius: 25px;
+    padding-left: 2vw; 
+    padding-right: 2vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     justify-content: center;
     width: 70vw;
     margin-left: 15vw;
