@@ -40,19 +40,16 @@ body {
 .compArea {
     text-align: center;
 }
-.clacCompValue {
-    color: white;
-    margin-top: 2vh;
-    background-color: rgb(5, 166, 241);
-    border-radius: 10px;
-}
-
-.addHomeBtn {
-    color: white;
-    background-color: rgb(5, 166, 241);
-    border-radius: 10px;
-}
 
 .btnList {
     text-align: center;
+}
+.btnList > * {
+    margin-top: 2vh;
+    color: white;
+    background-color: rgb(5, 166, 241);
+    border-radius: 10px;
+    margin-inline: 10px;
+    padding: 5px;
+    border: 0;
 }
