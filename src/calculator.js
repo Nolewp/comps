@@ -1,19 +1,55 @@
+import './style.css';
+
+function styleThis(domItem, classes){
+    domItem.classList.add(...classes.split(' '));
+    return domItem
+}
+styleThis(document.body, "bg-emerald-100 text-center flex justify-center")
+
+
 let wrapper = (addbtn, calcbtn) => {
     let hold = document.createElement('div');
-    hold.classList.add("calculator");
+    hold.classList.add("text-center");
+    styleThis(hold, 'bg-teal-800 rounded-xl p-20 m-4')
     let btnHold = document.createElement('div')
     btnHold.classList.add("btnList")
-    hold.innerHTML = `
-    <div id = "calc">
-        <h3> Subject home </h3>
-        <div></span><input type="number" name="subject" id="subject" placeholder="Subject Home Sqft.">  </div>
+    hold.innerHTML = 
+    `
+    <div id="calc" class="bg-gray-200 rounded-lg p-4 m-4 min-w-32 max-w-3xl">
+    <h3 class="text-xl font-bold mb-4">Subject home</h3>
+    <div class="mb-4">
+        <input type="number" name="subject" id="subject" placeholder="Subject Home Sqft." class="border border-gray-300 p-2 rounded-md w-full">
+    </div>
         
-        <h3>Comparison homes</h3>
-        <div> <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
-        <div> <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
-        <div> <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="psqft" id="psqft" placeholder="Price per Sqft.">  </div>
+    <h3 class="mb-2">Comparison homes</h3>
+    <div id="homes" class="flex flex-wrap">
+        <div class="mb-2 flex items-center w-full">
+            <button onClick="editPost(this)" class="text-red-500 hover:text-red-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <input type="number" name="psqft" id="psqft" placeholder="Price per Sqft." class="border border-gray-300 p-2 rounded-md flex-1 w-full">
+        </div>
+        <div class="mb-2 flex items-center w-full">
+            <button onClick="editPost(this)" class="text-red-500 hover:text-red-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <input type="number" name="psqft" id="psqft" placeholder="Price per Sqft." class="border border-gray-300 p-2 rounded-md flex-1 w-full">
+        </div>
+        <div class="mb-2 flex items-center w-full">
+            <button onClick="editPost(this)" class="text-red-500 hover:text-red-600 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <input type="number" name="psqft" id="psqft" placeholder="Price per Sqft." class="border border-gray-300 p-2 rounded-md flex-1 w-full">
+        </div>
+    </div>
+</div>
 
-    </div> 
     ` 
     btnHold.appendChild(addbtn)
     btnHold.appendChild(calcbtn)
@@ -40,6 +76,7 @@ let deletePost = (e) => {
 let addButton = () => {
     let addcalcbutton = document.createElement('button');
     addcalcbutton.classList.add("addHomeBtn");
+    styleThis(addcalcbutton,'bg-emerald-900 hover:bg-emerald-200 text-white font-bold py-2 px-4 border border-emerald-600 rounded' );
     addcalcbutton.innerText = "Add a home";
     addcalcbutton.onclick = function(click) {
         addInput();
@@ -50,6 +87,7 @@ let addButton = () => {
 let calculateBtn = () => {
     let calculateButton = document.createElement('button');
     calculateButton.classList.add("clacCompValue");
+    styleThis(calculateButton, "bg-emerald-900 hover:bg-emerald-200 text-white font-bold py-2 px-4 border border-emerald-600 rounded")
     calculateButton.innerText = "Calculate comp value";
     calculateButton.onclick = function(click) {
         validateInput();
@@ -59,9 +97,18 @@ let calculateBtn = () => {
 
 let addInput = () => {
     let div = document.createElement('div');
-    div.classList.add('h');
-    div.innerHTML = ` <i onClick="editPost(this)" class="fas fa-edit"></i><input type="number" name="sqft" id="psqft" placeholder="Price per Sqft."> ` ;
-    document.getElementById('calc').appendChild(div)
+    styleThis(div, "mb-2 flex items-center w-full")
+    //div.classList.add('mb-2 flex items-center');
+    div.innerHTML = 
+    `
+    <button onClick="editPost(this)" class="text-red-500 hover:text-red-600 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+    </button>
+    <input type="number" name="psqft" id="psqft" placeholder="Price per Sqft." class="border border-gray-300 p-2 rounded-md flex-1 w-full">
+    ` ;
+    document.getElementById('homes').appendChild(div)
 }
 
 let validateInput = () => {
