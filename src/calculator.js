@@ -15,7 +15,7 @@ let wrapper = (addbtn, calcbtn) => {
     btnHold.classList.add("btnList")
     hold.innerHTML = 
     `
-    <div id="calc" class="bg-gray-200 rounded-lg p-4 m-4 min-w-32 max-w-3xl">
+    <div id="calc" class="bg-gray-200 rounded-lg p-4 m-4 min-w-40 max-w-3xl">
     <h3 class="text-xl font-bold mb-4">Subject home</h3>
     <div class="mb-4">
         <input type="number" name="subject" id="subject" placeholder="Subject Home Sqft." class="border border-gray-300 p-2 rounded-md w-full">
@@ -172,8 +172,9 @@ currency: 'USD',
 let displayCompArea = () => {
     let compArea = document.createElement("div");
     compArea.classList.add("compArea");
-    let value = document.createElement("h3");
+    let value = document.createElement("h2");
     value.classList.add("compValue");
+    styleThis(compArea, "text-lg")
     value.id = "comValue";
     value.innerText = 'Fillout the form to calculate current estimated home value!';
     compArea.appendChild(value);
