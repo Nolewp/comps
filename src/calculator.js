@@ -10,12 +10,12 @@ styleThis(document.body, "bg-emerald-100 text-center flex justify-center")
 let wrapper = (addbtn, calcbtn) => {
     let hold = document.createElement('div');
     hold.classList.add("text-center");
-    styleThis(hold, 'bg-teal-800 rounded-xl p-20 m-4')
+    styleThis(hold, 'bg-teal-800 rounded-xl p-10 m-4')
     let btnHold = document.createElement('div')
     btnHold.classList.add("btnList")
     hold.innerHTML = 
     `
-    <div id="calc" class="bg-gray-200 rounded-lg p-4 m-4 min-w-40 max-w-3xl">
+    <div id="calc" class="bg-gray-200 rounded-lg p-4 m-4 min-w-44 max-w-3xl">
     <h3 class="text-xl font-bold mb-4">Subject home</h3>
     <div class="mb-4">
         <input type="number" name="subject" id="subject" placeholder="Subject Home Sqft." class="border border-gray-300 p-2 rounded-md w-full">
